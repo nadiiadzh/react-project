@@ -1,12 +1,16 @@
 import React from 'react'
-import test from 'img/Capture.jpg'
-import hello from './hello'
+import 'css/style.css'
+import Header from './header'
+import Main from './main'
+import Footer from './footer'
 
 const App = () => {
-	return (
+
+	return(
 		<>
-			<hello />
-			<img src={test} alt="Just a test image" />
+			<Header />
+			<Main  />
+			<Footer />		
 		</>
 	)
 }

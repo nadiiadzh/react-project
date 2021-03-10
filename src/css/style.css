@@ -1,0 +1,300 @@
+/* Note there a few "reset" styles given in reset.css. Review those before you begin */
+html {
+	--primary-col: #ff3366;    /* main colour */
+	--primary-alt: #ff6699;    /* variant */
+	--primary-on: #ffffff;     /* for text or icons */
+    --pad-and-gap: 1em;
+
+    --col-1: #15112b;
+    --col-2: #efe2d9;
+    --col-3: #f67f62;
+    --col-4: #ae95b3;
+    --col-5: #e6e6e6;
+    --col-6: #100e1b;
+    
+}
+
+/*-------- General Styling---------*/
+body{
+   font-family:  'Forum', 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    width: 100%;
+}
+
+.pagination a{
+    color: var(--col-6);
+}
+.product a{
+    color: red;
+    text-align: right;
+    padding-right: var(--pad-and-gap);
+    
+}
+a{
+    color: var(--col-2);
+}
+a:hover{
+    color: var(--col-3);
+
+}
+/*-----header-----*/
+.page-header{
+    background-color: var(--col-6);
+    color: var(--col-2);
+}
+.logo{
+    width: 35%;
+}
+.products, .page-header, .page-footer{
+    padding: 0px var(--pad-and-gap) 0 var(--pad-and-gap);
+}
+.search{
+    display: flex;
+    justify-content: flex-end;
+}
+.heading{
+    width: 100%;
+    text-align: center;
+    height: 250px;
+    background-image: url(../img/sara-saleh-cpisiUDKAqE-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center
+}
+.heading>h1{
+   
+    color: var(--col-3) ;
+    padding: 1.5em 0 1.5em 0;
+    
+}
+.material-icons{
+    color: #f19710;
+}
+
+.filters legend{
+    font-family: 'open-sans';
+    font-style: italic;
+    font-size: 1.2em;
+}
+.your-products{
+    display: flex;
+    column-gap: 0.2em;
+}
+.product del{
+    color: red;
+}
+.product{
+    padding: var(--pad-and-gap) ;
+    background-color: var(--col-2);
+}
+.product dl{
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+}
+.product dd{
+    margin: 0;
+    padding-left: var(--pad-and-gap) ;
+}
+
+.product button{
+    width: 100%;
+    margin-top: var(--pad-and-gap) ;
+    color: red;
+    border: 1px solid var(--col-1); 
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'open-sans';
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background: transparent;
+    position: bottom;
+
+}
+.product button:hover{
+    color: var(--col-3);
+    background-color: var(--col-6);
+}
+.page-footer{
+    background-color: var(--col-6);
+}
+.pagination{
+    text-align: center;
+}
+.pages{
+    display: flex;
+    justify-content: center;
+}
+.pages > li,.social > li, .legal > li{
+    margin: calc(var(--pad-and-gap));
+}
+.social, .legal{
+    display: flex;
+    justify-content: flex-end;
+}
+.copyright{
+    color: var(--col-2);
+    text-align: right;
+}
+
+/*---------Smallest Viewport ("mobile")-------*/
+
+.page-header{
+    padding: calc(var(--pad-and-gap) / 2);
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    column-gap: 0.2em;
+    align-content: center;
+}
+.logo{
+    grid-row: 1;
+    grid-column: 1;
+}
+.nav-toggle{
+    grid-row: 1;
+    grid-column: 4;
+}
+.menu{
+   display: none; 
+   
+}
+.search{
+    grid-row: 1;
+    grid-column: 2;
+    
+}
+.find{
+    width: 80px;
+    height: fit-content;
+    border: 0;
+    color: var(--col-2);
+    border-bottom: 1px solid var(--col-2); 
+    background: transparent;
+    font-size: 1em;
+    font-style: italic;
+}
+.find::placeholder {
+    color: var(--col-2);
+    background-color: transparent;
+}
+.navigation{
+    text-align: center;
+    grid-row: 3;
+    grid-column: 1 / 5;
+    
+}
+.filter-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.grid{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: var(--pad-and-gap);
+}
+
+
+/*------ Medium Viewport--------*/
+
+@media screen and (min-width:  40em) {
+    
+    .navigation{
+        grid-row: 2;
+        grid-column: span 3;
+        padding: 0;
+        
+    }
+    .nav-toggle{
+        display: none;
+    }
+    .menu,.menu > li{
+        display: flex;
+        column-gap: var(--pad-and-gap) ;
+        justify-content: center;
+        font-size: 1.1em;
+    }
+    .menu > li >a:hover{
+        color: var(--col-3);
+
+    }
+    .products{
+        margin-top: var(--pad-and-gap) ;
+        display: grid;
+        grid-template-columns: 15em auto;
+        gap: var(--pad-and-gap);
+    }
+    .heading, .pagination{
+        grid-column: span 2;
+    }
+    .heading >h1{
+        font-size: 2.5em;
+        padding: 1em 0 1em 0
+    }
+    
+}
+
+/*------ Large Viewport--------*/
+
+@media screen and (min-width:  60em) {
+
+    .page-header{
+        grid-template-columns:  auto auto auto auto auto;
+        font-size: 1.1em;
+    }
+    .nav-toggle{
+        display: none;
+    }
+    .search{
+        padding:  var(--pad-and-gap) 0px  var(--pad-and-gap) 0px;
+        grid-row: 1;
+        grid-column: 3;
+    
+    }
+    .navigation{
+        padding:  var(--pad-and-gap) 0px  var(--pad-and-gap) 0px;
+        grid-row: 1;
+        grid-column: 2;
+       
+    }
+
+    .your-products{
+        padding:  var(--pad-and-gap) 0px  var(--pad-and-gap) 0px;
+        grid-row: 1;
+        grid-column: 5;
+        gap: calc(var(--pad-and-gap)/2);
+
+    }
+    .menu,.menu > li,.submenu,.filter-list{
+        display: flex;
+    }
+    .submenu{
+        padding-left: 0;
+    }
+    .heading >h1{
+        font-size: 3em;
+        padding: 1.5em 0 1.5em 0
+    }
+    .results{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    
+    .subheading{
+        grid-column: span 2;
+    }
+}
+
+/*------ Extra Large Viewport--------*/
+
+@media screen and (min-width:  90em) {
+    .results{
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+    }
+    .subheading{
+        grid-column: span 3;
+    }
+}
